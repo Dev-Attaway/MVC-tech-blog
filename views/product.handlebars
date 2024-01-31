@@ -1,0 +1,17 @@
+<section class="container">
+  <section class="flex-row justify-center">
+    {{!-- The template uses a conditional statement {{#if isSingleProduct}} 
+    {{else}} 
+    {{/if}} 
+    to conditionally render different content based on the value of the variable isSingleProduct.
+    Which is data returned to the back end from the front end --}}
+
+    {{#if isSingleProduct}}
+    {{!-- If isSingleProduct truthy,load the partial template named viewProduct and pass the variable singleProduct
+    into the partial. --}}
+    {{> viewProduct singleProduct }}
+    {{else}}
+    {{> product singleProduct }}
+    {{/if}}
+  </section>
+</section>

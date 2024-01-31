@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS fake_store;
+CREATE DATABASE fake_store;

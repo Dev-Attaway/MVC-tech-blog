@@ -1,0 +1,73 @@
+<!-- Copyright (c) 2024 by LindsayMac (https://codepen.io/LindsayMac/pen/YzzqRo) -->
+<div
+  class='container max-w-md mx-auto xl:max-w-3xl flex rounded-lg overflow-hidden justify-center content-center shadow-lg bg-paleGreen dark:bg-slateGray'
+>
+  <div class='relative hidden xl:block xl:w-1/2 mt-10'>
+    <div id='container justify-center'>
+      <div id='link'>Welcome</div>
+
+      <div id='menu'>
+        <div class='front face'>
+          <p>WE'RE OPEN!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='w-full xl:w-1/2 p-8'>
+    <form id='login-form' method='post' action='#'>
+      <h1 class='text-2xl font-bold dark:text-ghostWhite'>Sign in to your account</h1>
+      <div>
+        <span class='text-gray-600 text-sm dark:text-ghostWhite'>
+          Don't have an account?
+        </span><a
+          href='/signup'
+          class='text-info text-sm font-semibold'
+        >Sign up</a>
+      </div>
+      <div class='mb-4 mt-6'>
+        <label
+          class='block dark:text-ghostWhite text-sm font-semibold mb-2'
+          htmlFor='email'
+        >
+          Email
+        </label>
+        <input
+          class='text-sm appearance-none rounded-full w-full border py-2 px-3  dark:text-darkGray dark:bg-ghostWhite leading-tight focus:outline-none focus:shadow-outline h-10'
+          id='email-login'
+          type='text'
+          placeholder='Your email address'
+        />
+      </div>
+      <div class='mb-6 mt-6'>
+        <label
+          class='block dark:text-ghostWhite text-sm font-semibold mb-2'
+          htmlFor='password'
+        >
+          Password
+        </label>
+        <input
+          class='text-sm bg-gray-200 appearance-none rounded-full border w-full py-2 px-3  dark:text-darkGray dark:bg-ghostWhite mb-1 leading-tight focus:outline-none focus:shadow-outline h-10'
+          id='password-login'
+          type='password'
+          placeholder='Your password'
+        />
+        <a
+          class='inline-block align-baseline text-sm text-gray-600 hover:text-gray-800'
+          href='#'
+        >
+          Forgot Password?
+        </a>
+      </div>
+      <div class='flex w-full mt-8'>
+        <button
+          class='w-full bg-teal text-sm py-2 px-4 font-semibold hover:scale-105 rounded-full border-teal dark:text-ghostWhite dark:bg-lightpink focus:outline-none focus:shadow-outline h-10'
+          type='sumbit'
+        >
+          Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src='./js/login.js'></script>

@@ -1,0 +1,74 @@
+<!-- component -->
+<link
+  rel='stylesheet'
+  href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
+/>
+<link
+  rel='stylesheet'
+  href='https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'
+/>
+
+<section class='pt-16 dark:bg-offBlack'>
+  <div class='w-1/2 lg:w-1/4 px-4 mx-auto '>
+    <div
+      class='relative flex flex-col min-w-0 break-words bg-lightpink w-full mb-6 shadow-xl rounded-lg mt-16'
+    >
+      <div class='px-6 bg-paleGreen dark:bg-slateGray rounded-xl'>
+        <div class='flex flex-wrap justify-center'>
+          <div class='w-full px-4 flex justify-center'>
+            <div class='relative'>
+              <img
+                alt='no user placeholder'
+                src='/images/no-user.png'
+                class='shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px'
+              />
+            </div>
+          </div>
+
+        <div class='text-center mt-28 w-96'>
+          <h3
+            class='text-xl font-semibold leading-normal mb-2 text-blueGray-700 dark:text-ghostWhite'
+          >
+          
+          {{#if logged_in}}
+            <p class="dark:text-ghostWhite">Hi, {{user.name}}</p>
+            {{/if}}
+          </h3>
+          <div
+            class='text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase'
+          >
+            <i class='fas fa-map-marker-alt mr-2 text-lg text-blueGray-400 dark:text-ghostWhite'></i>
+           account holder
+          </div>
+          {{#if user.products}}
+          <details class='collapse collapse-arrow bg-palegreen dark:bg-slateGray'>
+            <summary class='collapse-title text-l text-left font-medium mb-0 dark:bg-slateGray dark:text-ghostWhite'>Order History </summary>
+
+        {{#each user.products as |orderedProduct|}}
+
+            <div class='collapse-content'>
+              <p class="dark:text-ghostWhite">{{orderedProduct.product_name}}</p>
+            </div>
+
+        {{/each}}
+          </details>
+
+          {{/if}}
+        
+        </div>
+        <div class='mt-10 py-10 border-t-2 border-lightpink text-center'>
+          <div class='flex flex-wrap justify-center'>
+            <div class='w-full lg:w-9/12 px-4'>
+              <p class='mb-4 text-lg leading-relaxed text-blueGray-700 h-10 w-60'>
+                {{!-- removed logout because nav already has a logout --}}
+              </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
