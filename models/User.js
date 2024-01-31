@@ -55,7 +55,7 @@ User.init(
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
-          10
+          10,
         );
         return updatedUserData;
       },
@@ -67,13 +67,13 @@ User.init(
 
     // freezeTableName: Prevents Sequelize from pluralizing the table name.
     // underscored: Converts camel-cased attribute names to snake case for the table column names.
-    // modelName: Sets the model name to 'product'.
+    // modelName: Sets the model name to 'Comment'.
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-  }
+  },
 );
 
 module.exports = User;

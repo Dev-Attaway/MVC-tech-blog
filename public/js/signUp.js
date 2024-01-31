@@ -42,12 +42,12 @@ const signupFormHandler = async (event) => {
 
       Thank you for signing up with us! Your decision to become a part of the Fake Store family means a lot to us, and we are thrilled to have you on board.
 
-      By becoming a member, you now have access to exclusive updates, special promotions, and a first look at our latest products. We are confident that you will find great value in being a part of our community, and we are committed to delivering an exceptional shopping experience for you.
+      By becoming a member, you now have access to exclusive updates, special promotions, and a first look at our latest Comments. We are confident that you will find great value in being a part of our community, and we are committed to delivering an exceptional shopping experience for you.
 
       <br>
       <br>
 
-      We encourage you to explore our website regularly, as we frequently update our product offerings and promotions. If you have any questions or need assistance, our dedicated customer support team is always here to help.
+      We encourage you to explore our website regularly, as we frequently update our Comment offerings and promotions. If you have any questions or need assistance, our dedicated customer support team is always here to help.
 
       Once again, thank you for choosing Fake Store. We look forward to serving you and providing you with a fantastic shopping experience.
 

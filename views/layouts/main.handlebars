@@ -17,21 +17,16 @@
             for='my-drawer-2'
             class='drawer-button font-semibold pl-2 text-3xl'
           >
-            <a class="dark:text-ghostWhite">
-              <img class="w-52 h-16"
+            <a class='dark:text-ghostWhite'>
+              <img
+                class='w-52 h-16'
                 alt='store logo'
                 src='/images/storeLogo.gif'
               />
-              </a>
+            </a>
           </label>
         </div>
 
-    <div class='flex-none'>
-        {{#if logged_in}}
-          {{>shoppingCartSvg}}
-        {{/if}}
-    </div>
-    
         <div class='dropdown dropdown-end'>
           <div
             tabindex='0'
@@ -51,7 +46,11 @@
             >
               {{#if logged_in}}
                 <li>
-                  <a href='/profile' class='justify-between dark:text-ghostWhite' type='click'>
+                  <a
+                    href='/profile'
+                    class='justify-between dark:text-ghostWhite'
+                    type='click'
+                  >
                     Profile
                   </a>
                 </li>
@@ -64,7 +63,11 @@
                 </li>
               {{else}}
                 <li>
-                  <a href='/profile' class='justify-between dark:text-ghostWhite' type='click'>
+                  <a
+                    href='/profile'
+                    class='justify-between dark:text-ghostWhite'
+                    type='click'
+                  >
                     Profile
                     <span class='badge dark:text-ghostWhite'>New</span>
                   </a>
@@ -79,7 +82,9 @@
     <section>
       <div class='drawer lg:drawer-open'>
         <input id='my-drawer-2' type='checkbox' class='drawer-toggle' />
-        <div class='drawer-content flex flex-col items-center justify-start dark:bg-offBlack'>
+        <div
+          class='drawer-content flex flex-col items-center justify-start dark:bg-offBlack'
+        >
 
           {{{body}}}
 
@@ -90,10 +95,16 @@
             aria-label='close sidebar'
             class='drawer-overlay'
           ></label>
-          <ul class='menu p-4 w-60 min-h-full text-base-content bg-darkblue dark:bg-navyBlue'>
+          <ul
+            class='menu p-4 w-60 min-h-full text-base-content bg-darkblue dark:bg-navyBlue'
+          >
             <!-- Sidebar content here -->
-            <li class='text-ghostWhite border-b'><a href='/' type='click' class='justify-center dark:text-ghostWhite text-lg'>Home</a></li>
-            
+            <li class='text-ghostWhite border-b'><a
+                href='/'
+                type='click'
+                class='justify-center dark:text-ghostWhite text-lg'
+              >Home</a></li>
+
           </ul>
         </div>
       </div>
