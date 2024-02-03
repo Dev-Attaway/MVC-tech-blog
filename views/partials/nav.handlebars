@@ -1,0 +1,41 @@
+<nav>
+  <div class='navbar bg-ghostWhite dark:bg-darkGray'>
+    <div class='flex-row-reverse'>
+      {{#if logged_in}}
+
+        <div class='px-3'>
+          <a href='#' id='logout'>Logout</a>
+        </div>
+
+        <div class='px-3'>
+          <a
+            href='/dashboard'
+            class='justify-between dark:text-ghostWhite'
+            type='click'
+          >
+            Dashboard
+          </a>
+        </div>
+        <div class='px-3'>
+          <a href='/' class='justify-between dark:text-ghostWhite' type='click'>
+            Homepage
+          </a>
+        </div>
+      {{else}}
+        <div class='px-3'>
+          <a
+            href='/login'
+            class='justify-between dark:text-ghostWhite'
+            type='click'
+          >
+            Login
+          </a>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
+{{#if logged_in}}
+  <script src='/js/logout.js'></script>
+{{/if}}
