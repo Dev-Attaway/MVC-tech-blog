@@ -36,16 +36,27 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10,
+        );
         return updatedUserData;
       },
     },
+
+    // sequelize: Specifies the Sequelize instance to use.
+    // timestamps: Indicates whether to include timestamp fields in the table.
+    // In this case, it's set to false, meaning no createdAt and updatedAt fields will be added.
+
+    // freezeTableName: Prevents Sequelize from pluralizing the table name.
+    // underscored: Converts camel-cased attribute names to snake case for the table column names.
+    // modelName: Sets the model name to 'Comment'.
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-  }
+  },
 );
 
 module.exports = User;

@@ -1,5 +1,5 @@
 {
-  "name": "Fake_store",
+  "name": "dev_blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -21,6 +21,7 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.3",
     "mysql2": "^2.2.5",
+    "prettier": "^3.2.4",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
