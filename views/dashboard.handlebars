@@ -2,8 +2,11 @@
   rel='stylesheet'
   href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
 />
-{{#if logged_in}}
+
+<section class='pt-16 dark:bg-offBlack'>
   <div class='w-full lg:w-1/2 px-8 mx-auto'>
+    <h1 class='text-black'>Hello, {{username}}</h1>
+
     <div
       class='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-2xl mt-16'
     >
@@ -12,7 +15,6 @@
         <div class='bg-gray-100 px-6'>
           <div class='flex flex-wrap justify-center'>
             <div class='bg-darkblue text-left my-4 w-96 rounded-md'>
-
               <div
                 class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
               >
@@ -23,19 +25,11 @@
                   </h1>
                 </div>
                 <div>
-                  <h4 class='text-ghostWhite'>
+                  <h1 class='text-ghostWhite'>
                     Created on
                     {{format_date blog.date_created}}
-                    by
-                    {{user.username}}
-                  </h4>
+                  </h1>
                 </div>
-              </div>
-              <div>
-                <p class='text-ghostWhite p-2'>
-                  Created on
-                  {{blog.description}}
-                </p>
               </div>
             </div>
           </div>
@@ -43,4 +37,4 @@
       {{/each}}
     </div>
   </div>
-{{/if}}
+</section>

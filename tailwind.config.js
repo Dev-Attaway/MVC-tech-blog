@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       height: {
         custom: '93%',
-      }
+      },
     },
     colors: {
       darkblue: '#2F4056',

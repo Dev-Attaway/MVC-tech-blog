@@ -10,28 +10,17 @@ class User extends Model {
 
 User.init(
   {
-    // An auto-incrementing integer, the primary key.
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    // A string representing the name of the user.
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    // A string representing the email of the user.
-    email: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-    // A string representing the password of the user.
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,12 +30,6 @@ User.init(
     },
   },
   {
-    /* 
-   hook is executed before creating a new user in the database. It takes the newUserData object, which contains the user's data
-   It hashes the user's password using bcrypt.hash() function.
-   The salt round used for hashing is 10
-   */
-
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);

@@ -1,20 +1,21 @@
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
+  const username = document.querySelector('#name-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (name && email && password) {
+  if (username && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
     if (password.length < 8) {
       invalidPassword();
     }
     if (response.ok) {
+<<<<<<< HEAD
+=======
       const json = await response.json();
       console.log(json);
 
@@ -66,12 +67,14 @@ const signupFormHandler = async (event) => {
         console.log(err);
         console.log('You signed up');
       }
+>>>>>>> 9a53ed70d64bcef68c2cff53f47635f81debb21e
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      console.log(response);
     }
   }
 };
+
 // This function is executed when the button whose id is login-route is pressed
 // Routes the user back to the login page
 const loginRouteHandler = async (event) => {
