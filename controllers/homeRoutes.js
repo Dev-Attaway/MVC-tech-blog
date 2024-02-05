@@ -8,53 +8,32 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
+          attributes: { exclude: ['password'] }, // Exclude the password field
 
-    const blogs = blogData.map((blog) =>
-      blog.get({
-        plain: true,
-      })
-    );
-    console.log(blogs);
-    res.render('homepage', {
-      blogs,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/blog/:id', async (req, res) => {
-  try {
-    const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
         },
         {
           model: Comment,
-          include: [User],
         },
       ],
     });
 
-    const blog = blogData.get({
-      plain: true,
-    });
-
-    res.render('blog', {
-      ...blog,
-      logged_in: req.session.logged_in,
-    });
+    // Convert the Sequelize model instance to a plain JavaScript object
+    const mappedBlogs = blogData.map(blog => blog.get({ plain: true }));
+    if (mappedBlogs) {
+      res.render('homepage', {
+        mappedBlogs,
+        logged_in: req.session.logged_in,
+      });
+    } else {
+      // Handle case when blog post is not found
+      res.status(404).send('Blog post not found');
+    }
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
+
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {

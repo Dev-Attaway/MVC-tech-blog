@@ -3,123 +3,24 @@
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
     <link rel='stylesheet' href='/css/output.css' />
     <link rel='stylesheet' href='/css/style.css' />
+
     <title>The Real Fake Store</title>
   </head>
 
   <body>
     <!-- nav -->
-<<<<<<< HEAD
       {{> nav}}
     <!-- SIDE BAR -->
     <section>
 
           {{{body}}}
 
-=======
-    <nav>
-      <div class='navbar bg-ghostWhite dark:bg-darkGray'>
-        <div class='flex-1'>
-          <label
-            for='my-drawer-2'
-            class='drawer-button font-semibold pl-2 text-3xl'
-          >
-            <a class='dark:text-ghostWhite'>
-              <img
-                class='w-52 h-16'
-                alt='store logo'
-                src='/images/storeLogo.gif'
-              />
-            </a>
-          </label>
-        </div>
-
-        <div class='dropdown dropdown-end'>
-          <div
-            tabindex='0'
-            role='button'
-            class='btn btn-ghost btn-circle avatar'
-          >
-            <div class='w-10 rounded-full'>
-              <img
-                alt='Tailwind CSS Navbar component'
-                src='/images/no-user.png'
-              />
-
-            </div>
-            <ul
-              tabindex='0'
-              class='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
-            >
-              {{#if logged_in}}
-                <li>
-                  <a
-                    href='/profile'
-                    class='justify-between dark:text-ghostWhite'
-                    type='click'
-                  >
-                    Profile
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='/api/users/logout'
-                    class='justify-between dark:text-ghostWhite'
-                    type='click'
-                  >Logout</a>
-                </li>
-              {{else}}
-                <li>
-                  <a
-                    href='/profile'
-                    class='justify-between dark:text-ghostWhite'
-                    type='click'
-                  >
-                    Profile
-                    <span class='badge dark:text-ghostWhite'>New</span>
-                  </a>
-                </li>
-              {{/if}}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- SIDE BAR -->
-    <section>
-      <div class='drawer lg:drawer-open'>
-        <input id='my-drawer-2' type='checkbox' class='drawer-toggle' />
-        <div
-          class='drawer-content flex flex-col items-center justify-start dark:bg-offBlack'
-        >
-
-          {{{body}}}
-
-        </div>
-        <div class='drawer-side'>
-          <label
-            for='my-drawer-2'
-            aria-label='close sidebar'
-            class='drawer-overlay'
-          ></label>
-          <ul
-            class='menu p-4 w-60 min-h-full text-base-content bg-darkblue dark:bg-navyBlue'
-          >
-            <!-- Sidebar content here -->
-            <li class='text-ghostWhite border-b'><a
-                href='/'
-                type='click'
-                class='justify-center dark:text-ghostWhite text-lg'
-              >Home</a></li>
-
-          </ul>
-        </div>
-      </div>
->>>>>>> 9a53ed70d64bcef68c2cff53f47635f81debb21e
     </section>
     {{!-- footer --}}
   {{> footer}}
-  </body>
+ </body>
 
 </html>
