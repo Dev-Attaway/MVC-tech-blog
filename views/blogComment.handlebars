@@ -1,0 +1,37 @@
+<link
+  rel='stylesheet'
+  href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
+/>
+
+<div class='bg-gray-100 p-6 m-4'>
+  <div
+    class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
+  >
+    <h2 class='blogTitle text-uppercase'>{{title}}</h2>
+    <p class='blogCreate text-right'>Created by
+      {{user.username}}
+      on
+      {{format_date date_created}}</p>
+  </div>
+  <p class='text-center blogDescTwo'>{{description}}</p>
+</div>
+<form id='new-comment-form' class='card'>
+  <div class='card-header'>
+    <h3>Add New Comment</h3>
+  </div>
+
+  <div class='card-body'>
+    <input type='hidden' name='post-id' value='{{id}}' />
+
+    <label class='form-label' for='comment-body'>Comment</label>
+
+    <textarea
+      id='comment-body'
+      name='comment-body'
+      class='form-input'
+    ></textarea>
+
+    <button type='submit' class='btn'>Submit</button>
+  </div>
+</form>
+<script src='/js/comments.js'></script>

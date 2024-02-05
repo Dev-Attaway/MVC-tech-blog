@@ -7,8 +7,7 @@
     <div
       class='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-2xl mt-16'
     >
-
-      {{#each blogs as |blog|}}
+      {{#each mappedBlogs as |blog|}}
         <div class='bg-gray-100 px-6'>
           <div class='flex flex-wrap justify-center'>
             <div class='bg-darkblue text-left my-4 w-96 rounded-md'>
@@ -17,9 +16,7 @@
                 class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
               >
                 <div>
-                  <h1 class='text-ghostWhite'><a
-                      href='/api/blogs/{{blog.id}}'
-                    >{{blog.title}}</a>
+                  <h1 class='text-ghostWhite'>{{blog.title}}
                   </h1>
                 </div>
                 <div>
@@ -33,11 +30,23 @@
               </div>
               <div>
                 <p class='text-ghostWhite p-2'>
-                  Created on
                   {{blog.description}}
                 </p>
               </div>
             </div>
+          </div>
+          <div class='bg-gray-100 px-6'>
+              {{#each comments as |comment|}}
+              <div class='commentCont'>
+                <p class='text-center commentText'>{{comment.comment_description}}</p>
+                <p class='text-center commentOwner'><span>~</span>Created by
+                  {{comment.user.username}}
+                  on
+                  {{format_date date_created}}<span>~</span></p>
+              </div>
+            {{/each}}
+            <a class="bg-darkblue-100 px-6" href='/api/blogs/{{blog.id}}'>Add a Comment</a>
+
           </div>
         </div>
       {{/each}}

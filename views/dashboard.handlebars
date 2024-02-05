@@ -7,21 +7,18 @@
   <div class='w-full lg:w-1/2 px-8 mx-auto'>
     <h1 class='text-black'>Hello, {{username}}</h1>
 
+  {{#each blogs as |blog|}}
+      
     <div
-      class='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-2xl mt-16'
+      class='relative flex flex-col min-w-0 break-words w-full mb-6  mt-16'
     >
-
-      {{#each blogs as |blog|}}
         <div class='bg-gray-100 px-6'>
           <div class='flex flex-wrap justify-center'>
-            <div class='bg-darkblue text-left my-4 w-96 rounded-md'>
-              <div
-                class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
-              >
+
+            <div class='bg-darkblue text-left px-4 py-2 w-full rounded-2xl'>
+              <div class="columns-2"> 
                 <div>
-                  <h1 class='text-ghostWhite'><a
-                      href='/api/blogs/{{blog.id}}'
-                    >{{blog.title}}</a>
+                  <h1 class='text-ghostWhite'>{{blog.title}}</a>
                   </h1>
                 </div>
                 <div>
@@ -31,10 +28,14 @@
                   </h1>
                 </div>
               </div>
-            </div>
+              <div class="bg-gray-100 mx-auto px-4 py-2 w-full">
+                <p class="text-lg text-gray-800">{{blog.description}}</p>
+              </div>
           </div>
+                 <button><a href='api/blogs/blogEdit/{{blog.id}}' class="px-6" type="click">Edit post? </a> </button> 
         </div>
-      {{/each}}
+      </div>
     </div>
-  </div>
+
+  {{/each}}
 </section>
