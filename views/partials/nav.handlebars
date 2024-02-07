@@ -1,12 +1,22 @@
+<!-- 
+  This <nav> section represents the navigation bar of the website.
+  It includes links and conditional logic based on whether the user is logged in or not.
+-->
+
 <nav>
+  <!-- Container for navigation bar with styling classes -->
   <div class='navbar bg-ghostWhite dark:bg-darkGray'>
+    <!-- Flex container for alignment -->
     <div class='flex-row-reverse'>
+      <!-- Conditional check if user is logged in -->
       {{#if logged_in}}
 
+        <!-- Logout link -->
         <div class='px-3'>
           <a href='#' id='logout'>Logout</a>
         </div>
 
+        <!-- Dashboard link -->
         <div class='px-3'>
           <a
             href='/dashboard'
@@ -16,12 +26,17 @@
             Dashboard
           </a>
         </div>
+
+        <!-- Homepage link -->
         <div class='px-3'>
           <a href='/' class='justify-between dark:text-ghostWhite' type='click'>
             Homepage
           </a>
         </div>
+
       {{else}}
+
+        <!-- Login link if user is not logged in -->
         <div class='px-3'>
           <a
             href='/login'
@@ -31,11 +46,13 @@
             Login
           </a>
         </div>
+
       {{/if}}
     </div>
   </div>
 </nav>
 
+<!-- If user is logged in The script (logout.js) is included -->
 {{#if logged_in}}
   <script src='/js/logout.js'></script>
 {{/if}}

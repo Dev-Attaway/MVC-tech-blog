@@ -1,11 +1,16 @@
-<!-- Copyright (c) 2024 by LindsayMac (https://codepen.io/LindsayMac/pen/YzzqRo) -->
+<!-- Container for the sign-up form -->
 <div
   class='container max-w-md mx-auto xl:max-w-3xl flex rounded-lg overflow-hidden justify-center content-center shadow-lg bg-paleGreen dark:bg-slateGray'
 >
 
+  <!-- Form section -->
   <div class='w-full xl:w-1/2 p-8'>
+    <!-- Sign-up form -->
     <form class='form new-user-form'>
+      <!-- Title of the form -->
       <h1 class='text-2xl font-bold dark:text-ghostWhite'>Sign up for an account</h1>
+
+      <!-- Link to login page -->
       <div>
         <span class='text-gray-600 text-sm dark:text-ghostWhite'>Already have an
           account?</span>
@@ -14,13 +19,13 @@
           class='text-gray-700 text-sm font-semibold text-info'
         >Login here</button>
       </div>
+
+      <!-- Name input field -->
       <div class='mb-4 mt-6'>
         <label
           class='block text-gray-700 text-sm font-semibold mb-2 dark:text-ghostWhite'
           htmlFor='name'
-        >
-          Name
-        </label>
+        >Name</label>
         <input
           class='text-sm appearance-none rounded-full w-full border py-2 px-3 dark:text-darkGray dark:bg-ghostWhite shadow-lg leading-tight focus:outline-none focus:shadow-outline h-10'
           id='name-signup'
@@ -28,20 +33,13 @@
           placeholder='Your name'
         />
       </div>
-      <div id='invalid-password' class='hidden'>
-        <p>
-          Your email or password are invalid. Please provide a valid email and
-          password(8 characters)...
-        </p>
-      </div>
 
+      <!-- Password input field -->
       <div class='mb-6 mt-6'>
         <label
           class='block dark:text-ghostWhite text-sm font-semibold mb-2'
           htmlFor='password'
-        >
-          Password
-        </label>
+        >Password</label>
         <input
           class='text-sm bg-gray-200 appearance-none rounded-full border w-full py-2 px-3 dark:text-darkGray dark:bg-ghostWhite mb-1 shadow-lg leading-tight focus:outline-none focus:shadow-outline h-10'
           id='password-signup'
@@ -49,20 +47,18 @@
           placeholder='Your password'
         />
       </div>
+
+      <!-- Sign-up button -->
       <div class='form-group'>
         <button
           class='w-full bg-teal border-teal shadow-lg text-sm py-2 px-4 font-semibold hover:scale-105 rounded-full dark:text-ghostWhite dark:bg-lightpink focus:outline-none focus:shadow-outline h-10'
           type='submit'
           id='signup-button'
-        >
-          Sign up
-        </button>
+        >Sign up</button>
       </div>
     </form>
   </div>
-
-  <div class='relative hidden xl:block xl:w-1/2 mt-10'>
-  </div>
 </div>
-<script src='https://smtpjs.com/v3/smtp.js'></script>
+
+<!-- Script for handling sign-up functionality -->
 <script src='./js/signUp.js'></script>

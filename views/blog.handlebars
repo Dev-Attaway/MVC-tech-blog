@@ -2,17 +2,22 @@
   rel='stylesheet'
   href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
 />
-<script src="/public/js/comments.js"></script>
 
+<!-- Container div for displaying blog content with styling classes -->
 <div class='bg-gray-100 p-6 m-4'>
   <div
-      class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
-         >
-        <h2 class='blogTitle text-uppercase'>{{title}}</h2>
-        <p class='blogCreate text-right'>Created by
-          {{user.username}}
-          on
-          {{format_date date_created}}</p>
-      </div>
-    <p class='text-center blogDescTwo'>{{description}}</p>
+    class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
+  >
+    <!-- Blog title -->
+    <h2 class='blogTitle text-uppercase'>{{title}}</h2>
+    <!-- Blog creator and creation date -->
+    <p class='blogCreate text-right'>
+      Created by
+      {{user.username}}
+      on
+      {{format_date date_created}}
+    </p>
   </div>
+  <!-- blog description -->
+  <p class='text-center blogDescTwo'>{{description}}</p>
+</div>

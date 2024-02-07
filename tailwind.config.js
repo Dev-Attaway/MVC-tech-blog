@@ -26,5 +26,4 @@ module.exports = {
       lightpink: '#f0776c',
     },
   },
-  plugins: [require('daisyui')],
 };

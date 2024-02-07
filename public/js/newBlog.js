@@ -1,21 +1,21 @@
 const newFormHandler = async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const content = document.querySelector('textarea[name="post-body"]').value;
+  const title = document.querySelector('input[name="blog-title"]').value;
+  const content = document.querySelector('textarea[name="blog-body"]').value;
 
-  await fetch(`/api/blogs`, {
+  const response = await fetch(`/api/blogs`, {
     method: 'POST',
-    body: JSON.stringify({
-      title,
-      content,
-    }),
+    body: JSON.stringify({ title, content }),
     headers: { 'Content-Type': 'application/json' },
   });
-
-  document.location.replace('/dashboard');
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    console.log(response.statusText);
+  }
 };
 
 document
-  .querySelector('#new-post-form')
+  .querySelector('#new-blog-form')
   .addEventListener('submit', newFormHandler);
