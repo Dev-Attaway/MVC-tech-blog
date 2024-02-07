@@ -8,17 +8,23 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: { exclude: ['password'] }, // Exclude the password field
-
+          attributes: { exclude: ['password'] }, // Exclude the password field from the User model
         },
         {
           model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: { exclude: ['password'] }, // Exclude the password field from the associated User model in the Comment model
+            },
+          ],
         },
       ],
     });
 
     // Convert the Sequelize model instance to a plain JavaScript object
-    const mappedBlogs = blogData.map(blog => blog.get({ plain: true }));
+    const mappedBlogs = blogData.map((blog) => blog.get({ plain: true }));
+
     if (mappedBlogs) {
       res.render('homepage', {
         mappedBlogs,
@@ -33,7 +39,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -78,6 +83,17 @@ router.get('/signUp', (req, res) => {
     return;
   }
   res.render('signUp');
+});
+
+router.get('/blogCreate', withAuth, (req, res) => {
+  try {
+    res.render('createBlog', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 module.exports = router;

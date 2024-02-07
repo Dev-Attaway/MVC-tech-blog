@@ -3,23 +3,29 @@
   href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
 />
 
-<div class='bg-gray-100 p-6 m-4'>
-  <div
-    class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
-  >
-    <h2 class='blogTitle text-uppercase'>{{title}}</h2>
-    <p class='blogCreate text-right'>Created by
-      {{user.username}}
-      on
-      {{format_date date_created}}</p>
+<div class='flex flex-wrap justify-center'>
+  <div class='bg-darkblue w-full rounded-t-lg mx-4'>
+    <div
+      class='relative flex flex-row justify-between min-w-0 break-words mt-2 px-2'
+    >
+      <div>
+        <h1 class='text-ghostWhite text-lg underline'>{{title}}
+        </h1>
+      </div>
+      <h4 class='text-xs text-ghostWhite'>
+        Created on
+        {{format_date date_created}}
+        by
+        {{user.username}}
+      </h4>
+    </div>
+    <p class='text-ghostWhite p-2'>
+      {{description}}
+    </p>
   </div>
-  <p class='text-center blogDescTwo'>{{description}}</p>
 </div>
-<form id='new-comment-form' class='card'>
-  <div class='card-header'>
-    <h3>Add New Comment</h3>
-  </div>
 
+<form id='new-comment-form' class='card'>
   <div class='card-body'>
     <input type='hidden' name='post-id' value='{{id}}' />
 

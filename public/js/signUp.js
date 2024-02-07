@@ -10,11 +10,8 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-    if (password.length < 8) {
-      invalidPassword();
-    }
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       console.log(response);
     }
@@ -34,22 +31,6 @@ const loginRouteHandler = async (event) => {
   } else {
     console.log(response.statusText);
   }
-};
-
-// This is event is executed when the password input is invalid
-// Makes a div, that is hidden by the class "hidden", visible by .classList.remove('hidden');
-// Uses a timer to determine for how long the div should be visible for
-const invalidPassword = () => {
-  var quickTimerCtr = 20;
-  hiddenElement = document.querySelector('#invalid-password');
-  const quickTimer = setInterval(function () {
-    quickTimerCtr--;
-    hiddenElement.classList.remove('hidden');
-    if (quickTimerCtr <= 0) {
-      hiddenElement.classList.add('hidden');
-      clearInterval(quickTimer);
-    }
-  }, 100);
 };
 
 document
