@@ -3,7 +3,6 @@ const commentFormHandler = async function (event) {
 
   const blog_id = document.querySelector('input[name="post-id"]').value;
   const body = document.querySelector('textarea[name="comment-body"]').value;
-    console.log(body)
 
   if (body) {
     const response = await fetch('/api/comments', {
@@ -16,13 +15,11 @@ const commentFormHandler = async function (event) {
         'Content-Type': 'application/json',
       },
     });
-    console.log(response)
 
     if (response.ok) {
-      // document.location.replace('/');
-		
+      document.location.replace('/');
     } else {
-      // console.log(response)
+      console.log(response);
     }
   }
 };

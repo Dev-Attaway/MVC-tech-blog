@@ -2,54 +2,63 @@
   rel='stylesheet'
   href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
 />
-{{#if logged_in}}
-  <div class='w-full lg:w-1/2 px-8 mx-auto'>
-    <div
-      class='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-2xl mt-16'
-    >
+{{#if logged_in}} 
+  <div class='bg-gray-100 px-8 py-4 mx-2 shadow-2xl'>
       {{#each mappedBlogs as |blog|}}
-        <div class='bg-gray-100 px-6'>
           <div class='flex flex-wrap justify-center'>
-            <div class='bg-darkblue text-left my-4 w-96 rounded-md'>
-
+            <div class='bg-darkblue w-full rounded-t-lg mx-4'>
               <div
-                class='relative flex flex-row justify-between min-w-0 break-words w-full mb-6 mt-2 px-2'
+                class='relative flex flex-row justify-between min-w-0 break-words mt-2 px-2'
               >
                 <div>
-                  <h1 class='text-ghostWhite'>{{blog.title}}
+                  <h1 class='text-ghostWhite text-lg underline '>{{blog.title}}
                   </h1>
                 </div>
-                <div>
-                  <h4 class='text-ghostWhite'>
+                  <h4 class='text-xs text-ghostWhite'>
                     Created on
                     {{format_date blog.date_created}}
                     by
                     {{user.username}}
                   </h4>
-                </div>
               </div>
-              <div>
                 <p class='text-ghostWhite p-2'>
                   {{blog.description}}
                 </p>
               </div>
             </div>
-          </div>
-          <div class='bg-gray-100 px-6'>
-              {{#each comments as |comment|}}
-              <div class='commentCont'>
-                <p class='text-center commentText'>{{comment.comment_description}}</p>
-                <p class='text-center commentOwner'><span>~</span>Created by
-                  {{comment.user.username}}
-                  on
-                  {{format_date date_created}}<span>~</span></p>
-              </div>
-            {{/each}}
-            <a class="bg-darkblue-100 px-6" href='/api/blogs/{{blog.id}}'>Add a Comment</a>
 
+          {{#if comments}}
+          <div class="bg-darkblue py-2 mb-8 mx-4 flex justify-center flex-col items-center shadow-2xl">
+
+            {{#each comments as |comment|}}
+            <div class="border-round border-2 rounded-lg m-2 ">
+                <p
+                  class='text-left text-ghostWhite p-2 m-2'
+                >{{comment.comment_description}}</p>
+                <p class='text-center text-ghostWhite text-xs p-2 m-2 '><span>~</span>Created by
+                  {{user.username}}
+                  on
+                  {{format_date date_created}}<span>~</span></p>  
+            </div>
+            {{/each}}
+
+            <a
+              class='bg-teal shadow-lg text-sm text-ghostWhite py-2 px-4 my-2 font-semibold hover:scale-105 rounded-full focus:outline-none focus:shadow-outline h-10 w-24'
+              href='/api/blogs/{{blog.id}}'
+            >
+              Add a Comment
+            </a>
           </div>
-        </div>
+          {{else}}
+          <div class="bg-darkblue py-2 mb-8 mx-4 flex justify-center flex-col items-center shadow-2xl">
+            <a
+              class='bg-teal shadow-lg text-sm text-ghostWhite py-2 px-4 my-2 font-semibold hover:scale-105 rounded-full focus:outline-none focus:shadow-outline h-10 w-24'
+              href='/api/blogs/{{blog.id}}'
+            >
+              Add a Comment
+            </a>          
+          </div>
+
+          {{/if}}
       {{/each}}
-    </div>
-  </div>
 {{/if}}

@@ -37,12 +37,14 @@ router.get('/:id', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
-      ...req.body,
+      title: req.body.title,
+      description: req.body.content,
       user_id: req.session.user_id,
     });
-
+    console.log(newBlog);
     res.status(200).json(newBlog);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
