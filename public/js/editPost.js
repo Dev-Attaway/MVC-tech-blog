@@ -1,9 +1,9 @@
-const postId = document.querySelector('input[name="post-id"]').value;
+const postId = document.querySelector('input[name="blog-id"]').value;
 
 const editFormHandler = async function (event) {
   event.preventDefault();
-  const title = document.querySelector('input[name="post-title"]').value;
-  const body = document.querySelector('textarea[name="post-body"]').value;
+  const title = document.querySelector('input[name="blog-title"]').value;
+  const body = document.querySelector('textarea[name="blog-body"]').value;
 
   await fetch(`/api/blogs/${postId}`, {
     method: 'PUT',

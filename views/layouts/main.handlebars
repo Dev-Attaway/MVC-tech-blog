@@ -1,26 +1,35 @@
+<!-- 
+  This web page is using Handlebars as the templating engine.
+  It includes links to CSS files and placeholders for dynamic content.
+-->
+
 <html lang='en'>
 
   <head>
+    <!-- Meta tags -->
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
+    <!-- External CSS files -->
     <link rel='stylesheet' href='/css/output.css' />
     <link rel='stylesheet' href='/css/style.css' />
 
-    <title>The Real Fake Store</title>
+    <!-- Title of the page -->
+    <title>MVC/HBS powered Blog</title>
   </head>
 
   <body>
-    <!-- nav -->
-      {{> nav}}
-    <!-- SIDE BAR -->
+    <!-- Navigation section -->
+    {{!-- Load the partial nav, found in the partials folder --}}
+    {{> nav}}
+
+    <!-- Main content section -->
     <section>
-
-          {{{body}}}
-
+      {{{body}}}
     </section>
-    {{!-- footer --}}
-  {{> footer}}
- </body>
+
+    <!-- Footer section -->
+    {{> footer}}
+  </body>
 
 </html>

@@ -3,15 +3,17 @@
   href='https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css'
 />
 
+<!-- Container div with flex and wrap properties for aligning content -->
 <div class='flex flex-wrap justify-center'>
   <div class='bg-darkblue w-full rounded-t-lg mx-4'>
     <div
       class='relative flex flex-row justify-between min-w-0 break-words mt-2 px-2'
     >
       <div>
-        <h1 class='text-ghostWhite text-lg underline'>{{title}}
-        </h1>
+        <!-- Blog title -->
+        <h1 class='text-ghostWhite text-lg underline'>{{title}}</h1>
       </div>
+      <!-- Blog creation date and creator -->
       <h4 class='text-xs text-ghostWhite'>
         Created on
         {{format_date date_created}}
@@ -19,25 +21,32 @@
         {{user.username}}
       </h4>
     </div>
+    <!--  Blog description -->
     <p class='text-ghostWhite p-2'>
       {{description}}
     </p>
   </div>
 </div>
 
+<!-- Form for submitting new comments with styling classes -->
 <form id='new-comment-form' class='card'>
+  <!-- Form body containing input fields -->
   <div class='card-body'>
-    <input type='hidden' name='post-id' value='{{id}}' />
+    <!-- Hidden input field for storing the blog id -->
+    <input type='hidden' name='blog-id' value='{{id}}' />
 
+    <!-- Label and textarea for entering comment -->
     <label class='form-label' for='comment-body'>Comment</label>
-
     <textarea
       id='comment-body'
       name='comment-body'
       class='form-input'
     ></textarea>
 
+    <!-- Button for submitting the comment -->
     <button type='submit' class='btn'>Submit</button>
   </div>
 </form>
+
+<!-- Script tag to include a JavaScript file for handling comments functionality -->
 <script src='/js/comments.js'></script>

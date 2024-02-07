@@ -1,25 +1,20 @@
+## MVC/HBS powered Blog
+
 <h1 align="center">
-<img
-		width="400"
-    height="150"
-		alt="The Real Fake Store"
-		src="https://github.com/LexiKHecht/Fake-store/assets/145725343/23fd48b2-1827-4f86-b653-d410a8f5cfe8">
-  
+
   [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
   [![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)](https://nodejs.org/en) 
-  ![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=flat&logo=daisyui&logoColor=white)
   ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
   ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=flat&logo=Sequelize&logoColor=white)
 </h1>
 
   ## 🏬Description
-The Real Fake Store is a mock-up eCommerce shop that features a not-so-diverse selection of clothes, accessories, and electronics. This minimalist, straightforward online store allows shoppers to create a secured account which then grants access to the displayed Comments and corresponding information for each. The shopper can easily scroll through their options, scan over prices, view reviews, and read short descriptions on all items. If they see a Comment they like, a `Buy Now` button can be clicked which simulates an order being processed.
+The Real Fake Store is a mock-up eCommerce shop that features a not-so-diverse selection of clothes, accessories, and electronics. This minimalist, straightforward online store allows shoppers to create a secured account which - then grants access to the displayed Comments and corresponding information for each. The shopper can easily scroll through their options, scan over prices, view reviews, and read short descriptions on all items. If they see a Comment they like, a `Buy Now` button can be clicked which simulates an order being processed.
     
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
-  * [API's Used](#api-used)
   * [Technology Used](#technology-used)
   * [License](#license)
   * [Contributing](#contributing)
@@ -30,29 +25,53 @@ The Real Fake Store is a mock-up eCommerce shop that features a not-so-diverse s
   To install required dependencies, run the following command:
   > npm i
 
-  To initiate Tailwind and DaisyUI, run the following command:
+  To initiate Tailwind run the following command:
   > npm run tailwind
 
  ## Usage
 ### Features
 - Login/Logout Components
 - Personal Profile
-- Dynamic Colour Themes (Dark or Light mode)
+- Blog creation
+- Leave comments on created blogs 
+- Update past blogs
+- Delete past blogs
+- View portal to all blogs created by other users other site
+
 
 ### Functionality
-- The shopper can view a very limited selection of Comments upon opening the homepage. A photo gallery can be browsed through and category links as well as contact information can be found towards the bottom of the page.
-- If the user does not have an account, they will need to create an account to sign in and view Comments. 
-- Once the user creates a new account, they will be sent a thank you email.
-- Once logged in, the shopper is granted full access to the complete list of Comments. Comment name, price, shop category, description, and rating are all viewable for each item.
-- While logged in, the shopper can locate their profile by clicking the no-user picture in the top right corner. Order history will be accesable from here in the future. 
-- Items can be `purchased' by a simple button click found to the right of each ware. 
 
-[FakeStoreDemoVid.webm](https://github.com/LexiKHecht/Fake-store/assets/145725343/f33859e9-9032-4f21-b0f0-4780bcb53db6)
+- WHEN a user visits the site for the first time
+- THEN the homepage presents itself, including existing blogs if any have been bloged, navigation links for the homepage and the dashboard, and the option to log in
+- WHEN a user clicks on the homepage option
+- THEN they are taken to the homepage
+- WHEN a user clicks on any other links in the navigation
+- THEN they are prompted to either sign up or sign in
+- WHEN a user chooses to sign up
+- THEN they are prompted to create a username and password
+- WHEN a user clicks on the sign-up button
+- THEN their user credentials are saved, and they are logged into the site
+- WHEN a user revisits the site at a later time and chooses to sign in
+- THEN they are prompted to enter their username and password
+- WHEN a user is signed in to the site
+- THEN they see navigation links for the homepage, the dashboard, and the option to log out
+- WHEN a user clicks on the homepage option in the navigation
+- THEN they are taken to the homepage and presented with existing blogs that include the blog title and the date created
+- WHEN a user clicks on an existing blog blog
+- THEN they are presented with the blog title, contents, blog creator’s username, and date created for that blog and have the option to leave a comment
+- WHEN a user enters a comment and clicks on the submit button while signed in
+- THEN the comment is saved, and the blog is updated to display the comment, the comment creator’s username, and the date created
+- WHEN a user clicks on the dashboard option in the navigation
+- THEN they are taken to the dashboard and presented with any blogs they have already created and the option to add a new blog blog
+- WHEN a user clicks on the button to add a new blog blog
+- THEN they are prompted to enter both a title and contents for their blog blog
+- WHEN a user clicks on the button to create a new blog blog
+- THEN the title and contents of their blog are saved, and they are taken back to an updated dashboard with their new blog blog
+- WHEN a user clicks on one of their existings in the dashboard
+- THEN they are able to delete or update their blog and taken back to an updated dashboard
+- WHEN a user clicks on the logout option in the navigation
+- THEN they are signed out of the site
 
-
-## API Used
-
-- [FakeStoreAPI](https://fakestoreapi.com/) A free to use REST API created by Keikaavousi
 
 ## Technology Used
 - [Bcrypt](https://jquery.com/)
@@ -61,12 +80,8 @@ The Real Fake Store is a mock-up eCommerce shop that features a not-so-diverse s
 - [Sequalize](https://sequelize.org/)
 - [Nodemon](https://nodemon.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [DaisyUI](https://daisyui.com/)
-- [Adobe Express](https://new.express.adobe.com/)
-- Microsoft PowerPoint
 
 ## License
-- [PNGs by Vecteezy](https://www.vecteezy.com)
 - [MIT](https://opensource.org/license/mit/)
 
 ## Contributing
@@ -74,8 +89,5 @@ The Real Fake Store is a mock-up eCommerce shop that features a not-so-diverse s
   https://opensource.guide/how-to-contribute/
 
   ## Questions
- If you have any questions or issues, please contact me at Lexikhecht@gmail.com. You can also find more of my work at https://github.com/LexiKHecht.
+ If you have any questions or issues, please contact me at attaway.code@gmail.com. You can also find more of my work at https://github.com/Dev-attaway.
  
-<h3 align="center">
-  🖥️💍👚 🛒🏃💨
-</h3>
