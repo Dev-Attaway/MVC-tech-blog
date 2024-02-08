@@ -87,11 +87,6 @@ router.get('/login', (req, res) => {
 
 // Route for rendering the sign-up page
 router.get('/signUp', (req, res) => {
-  // Redirecting to the signup page if user is already logged in
-  if (req.session.logged_in) {
-    res.redirect('/signup');
-    return;
-  }
   // Rendering the sign-up page
   res.render('signUp');
 });
