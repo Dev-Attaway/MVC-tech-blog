@@ -97,4 +97,4 @@
  If you have any questions or issues, please get in touch with me at attaway.code@gmail.com. You can also find more of my work at https://github.com/Dev-attaway.
  
   ## Heroku
-  https://glacial-shore-27204-fee7a2f643f4.herokuapp.com/
+  https://dev-attaway-mvc-hbs-blog-f80032cd86ff.herokuapp.com/
