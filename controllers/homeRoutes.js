@@ -88,7 +88,7 @@ router.get('/login', (req, res) => {
 // Route for rendering the sign-up page
 router.get('/signUp', (req, res) => {
   // Rendering the sign-up page
-  res.render('signUp');
+  res.render('signup');
 });
 
 // Route for rendering the create blog page, requires authentication
